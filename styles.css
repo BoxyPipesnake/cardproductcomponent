@@ -17,6 +17,9 @@
 body {
     box-sizing: border-box;
     background-color: var(--cream);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
 }
 
 body, h1, p, div{
@@ -26,12 +29,10 @@ body, h1, p, div{
 
 img {
     max-width: 100%;
+    height: auto;
+    object-fit: contain;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.perfume-image2 {
-    display: none;
 }
 
 h1 {
@@ -48,81 +49,35 @@ p {
 
 
 .main {
+    display: grid;
+    grid-template-columns: 1fr;
     width: 90%;
-    max-width: 1200px;
-    margin: 2.5rem auto;
+    max-width: 600px;
     border-radius: 15px;
+    margin: 1rem;
     perspective: 1px;
     overflow: hidden;
+
 }
 
-@media (min-width: 770px) {
+@media (min-width: 600px) {
+
+    .title {
+        font-size: 2.2rem;
+    }
+
     .main {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .perfume-image1 {
-        display: none;
-    }
-
-    .perfume-image2 {
-        display: block;
     }
 
     .product-section {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        
-        flex-wrap: wrap;
-
-    }
-
-    .top, .description, .btn {
-        font-size: 1.25rem;
-    }
-
-    .title {
-        font-size: 2.75rem;
-    }
-
-    .flex > .price {
-        font-size: 2.75rem;
-    }
-
-    .flex > .underlined-price {
-        font-size: 1.25rem;
-    }
-
-    .btn {
-        font-size: 1.1rem;
-    }
-
-}
-
-@media (min-width: 1000px) {
-
-    .top, .description {
-        font-size: 1.875rem;
-    }
-
-    .title {
-        font-size: 3rem;
-    }
-
-
-    .flex > .price {
-        font-size: 3rem;
-    }
-
-    .flex > .underlined-price {
-        font-size: 1.875rem;
-    }
-
-    .btn {
-        font-size: 1.5rem;
-        width: 85%;
+        justify-content: center;
+        background-color: var(--white);
+        padding: 2rem;
+        padding-bottom: 0;
+        padding-top: 0;
     }
 }
 
@@ -135,6 +90,7 @@ p {
     text-transform: uppercase;
     letter-spacing: 0.27rem;
     margin-bottom: 0.9375rem;
+    font-size: 0.7rem;
 }
 
 .title {
@@ -143,7 +99,7 @@ p {
 
 .description {
     margin-bottom: 0.9375rem;
-    line-height: 1.5;
+    line-height: 2;
 }
 
 .flex {
